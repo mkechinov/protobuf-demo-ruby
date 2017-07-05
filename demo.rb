@@ -1,5 +1,5 @@
 # require 'protobuf'
-require './lib/demo/message_pb'
+require './lib/demo/letter_pb'
 require 'benchmark'
 require 'json'
 
@@ -28,11 +28,11 @@ puts Benchmark.measure { times.times { json_sample.to_json } }
 
 puts "** Protobuf: "
 puts Benchmark.measure { times.times {
-  sender = Demo::Person.new
+  sender = Demo::Letter::Person.new
   sender.first_name = json_sample[:sender][:first_name]
   sender.last_name = json_sample[:sender][:last_name]
   sender.email = json_sample[:sender][:email]
-  receiver = Demo::Person.new
+  receiver = Demo::Letter::Person.new
   receiver.first_name = json_sample[:receiver][:first_name]
   receiver.last_name = json_sample[:receiver][:last_name]
   receiver.email = json_sample[:receiver][:email]
@@ -47,11 +47,11 @@ puts "** Test decoding (#{times} iterations) **"
 
 json_string = json_sample.to_json
 
-sender = Demo::Person.new
+sender = Demo::Letter::Person.new
 sender.first_name = json_sample[:sender][:first_name]
 sender.last_name = json_sample[:sender][:last_name]
 sender.email = json_sample[:sender][:email]
-receiver = Demo::Person.new
+receiver = Demo::Letter::Person.new
 receiver.first_name = json_sample[:receiver][:first_name]
 receiver.last_name = json_sample[:receiver][:last_name]
 receiver.email = json_sample[:receiver][:email]
