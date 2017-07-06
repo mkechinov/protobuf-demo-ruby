@@ -115,11 +115,11 @@ puts
 
 puts "** Accumulated test message size **"
 puts "** XML: #{xml_sample.length * times} bytes"
-puts "** JSON: #{json_string.length * times} bytes"
-puts "** Protobuf: #{protobuf_string.length * times} bytes"
+puts "** JSON: #{json_string.length * times} bytes (#{(json_string.length.to_f / xml_sample.length.to_f * 100).to_i}%)"
+puts "** Protobuf: #{protobuf_string.length * times} bytes (#{(protobuf_string.length.to_f / xml_sample.length.to_f * 100).to_i}%)"
 
 puts
-
+#
 puts "** Inspect message **"
 puts "** JSON: #{json_string}"
 puts "** Protobuf: #{protobuf_string}"
