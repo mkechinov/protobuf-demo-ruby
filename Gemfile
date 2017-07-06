@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-# gem 'protobuf'
+gem 'bundler'
 gem 'google-protobuf'
+gem 'activesupport'
+gem 'builder'
